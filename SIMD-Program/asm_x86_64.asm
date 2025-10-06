@@ -11,14 +11,14 @@ vector_triad_asm_x64 PROC
     ; [rsp+28h] = D
 
     test    rcx, rcx
-    jz      done
+    jz      DONE
 
     mov     r10, qword ptr [rsp+28h]   ; D pointer
     xor     r11, r11                   ; i = 0
 
-loop:
+L:
     cmp     r11, rcx
-    jge     done
+    jge     DONE
 
     movss   xmm0, dword ptr [r8  + r11*4]   ; B[i]
     movss   xmm1, dword ptr [r9  + r11*4]   ; C[i]
@@ -28,9 +28,9 @@ loop:
     movss   dword ptr [rdx + r11*4], xmm0
 
     inc     r11
-    jmp     loop
+    jmp     L
 
-done:
+DONE:
     ret
 vector_triad_asm_x64 ENDP
 END
