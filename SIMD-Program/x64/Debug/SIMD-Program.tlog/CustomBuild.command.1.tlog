@@ -1,0 +1,2 @@
+^C:\USERS\PC\DESKTOP\REPOS\SIMD-VECTOR-TRIAD\SIMD-PROGRAM\ASM_X86_64.ASM
+ml64 /c /Fo"x64\Debug\\asm_x86_64.obj" "C:\Users\PC\Desktop\repos\simd-vector-triad\SIMD-Program\asm_x86_64.asm"

@@ -1,4 +1,6 @@
-﻿  main.c
-  vector_kernels.c
-  Generating Code...
+﻿  Assembling asm_x86_64.asm...
+  Microsoft (R) Macro Assembler (x64) Version 14.44.35208.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+   Assembling: C:\Users\PC\Desktop\repos\simd-vector-triad\SIMD-Program\asm_x86_64.asm
   SIMD-Program.vcxproj -> C:\Users\PC\Desktop\repos\simd-vector-triad\x64\Debug\SIMD-Program.exe

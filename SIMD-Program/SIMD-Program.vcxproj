@@ -130,9 +130,15 @@
     <ClInclude Include="vector_kernels.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="asm_simd_xmm.asm" />
     <None Include="asm_simd_ymm.asm" />
-    <None Include="asm_x86_64.asm" />
+    <CustomBuild Include="asm_x86_64.asm">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ml64 /c /Fo"$(IntDir)\%(Filename).obj" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(Filename).asm...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\%(Filename).obj</Outputs>
+    </CustomBuild>
     <None Include="makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

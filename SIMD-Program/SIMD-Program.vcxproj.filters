@@ -28,9 +28,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="asm_x86_64.asm">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="asm_simd_xmm.asm">
       <Filter>Source Files</Filter>
     </None>
@@ -40,5 +37,13 @@
     <None Include="makefile">
       <Filter>Source Files</Filter>
     </None>
+    <None Include=".gitignore">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="asm_x86_64.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

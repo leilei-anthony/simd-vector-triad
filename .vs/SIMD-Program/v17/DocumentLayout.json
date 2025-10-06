@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\asm_x86_64.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\vector_kernels.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\vector_kernels.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\makefile||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\makefile||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\main.c",
+              "RelativeDocumentMoniker": "SIMD-Program\\main.c",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\main.c",
+              "RelativeToolTip": "SIMD-Program\\main.c",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwE8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-10-06T08:03:35.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "asm_x86_64.asm",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm",
+              "RelativeDocumentMoniker": "SIMD-Program\\asm_x86_64.asm",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm",
+              "RelativeToolTip": "SIMD-Program\\asm_x86_64.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-06T07:56:08.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "makefile",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\makefile",
+              "RelativeDocumentMoniker": "SIMD-Program\\makefile",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\makefile",
+              "RelativeToolTip": "SIMD-Program\\makefile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-06T07:50:20.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "vector_kernels.c",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\vector_kernels.c",
+              "RelativeDocumentMoniker": "SIMD-Program\\vector_kernels.c",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\vector_kernels.c",
+              "RelativeToolTip": "SIMD-Program\\vector_kernels.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-10-06T07:50:21.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\.gitignore",
+              "RelativeDocumentMoniker": "SIMD-Program\\.gitignore",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\repos\\simd-vector-triad\\SIMD-Program\\.gitignore",
+              "RelativeToolTip": "SIMD-Program\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-09-29T06:36:42.176Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
