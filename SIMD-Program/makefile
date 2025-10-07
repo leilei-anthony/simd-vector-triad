@@ -49,8 +49,8 @@ $(TARGET_RELEASE): $(C_OBJECTS_RELEASE)
 	$(CC) $(CFLAGS_RELEASE) -c $< -o $@
 
 # Assembly object files (uncomment when you add assembly files)
-# %.o: %.asm
-#	$(ASM) $(ASMFLAGS) $< -o $@
+ %.o: %.asm
+ $(ASM) $(ASMFLAGS) $< -o $@
 
 # Clean build files
 clean:
