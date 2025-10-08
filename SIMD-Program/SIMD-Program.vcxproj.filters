@@ -28,12 +28,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="asm_simd_xmm.asm">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="asm_simd_ymm.asm">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="makefile">
       <Filter>Source Files</Filter>
     </None>
@@ -45,5 +39,13 @@
     <CustomBuild Include="asm_x86_64.asm">
       <Filter>Source Files</Filter>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="asm_simd_xmm.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="asm_simd_ymm.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

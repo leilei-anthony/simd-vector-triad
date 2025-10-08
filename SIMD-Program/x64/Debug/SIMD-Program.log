@@ -1,2 +1,5 @@
-﻿  main.c
-  SIMD-Program.vcxproj -> C:\Users\Nigel\Desktop\CSC612M-Vector-Triad\simd-vector-triad\x64\Debug\SIMD-Program.exe
+﻿  Assembling .asm
+  Assembling asm_simd_xmm.asm...
+  Assembling asm_simd_ymm.asm...
+  main.c
+  SIMD-Program.vcxproj -> C:\Users\PC\Desktop\repos\simd-vector-triad\x64\Debug\SIMD-Program.exe
