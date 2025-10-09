@@ -53,9 +53,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,9 +132,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <MASM Include="asm_simd_xmm.asm">
+    <CustomBuild Include="asm_simd_xmm.asm">
       <FileType>Document</FileType>
-    </MASM>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nasm -f win64 "%(FullPath)" -o "$(IntDir)%(FileName).obj"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(FileName).asm</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(FileName).obj</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(InputPath)</AdditionalInputs>
+    </CustomBuild>
     <CustomBuild Include="asm_simd_ymm.asm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <FileType>Document</FileType>
@@ -147,18 +149,17 @@
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(FileName).asm</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(FileName).obj</Outputs>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(InputPath)</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="asm_x86_64.asm">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nasm -f win64 "%(FullPath)" -o "$(IntDir)%(FileName).obj"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling $(FileName).asm</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling % (FileName).asm</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(FileName).obj</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(InputPath)</AdditionalInputs>
     </CustomBuild>
     <None Include="makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

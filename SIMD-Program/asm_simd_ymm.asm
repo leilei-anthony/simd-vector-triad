@@ -1,20 +1,20 @@
-; vector_triad_asm_simd_ymm_nasm.asm
-; A[i] = B[i] + C[i] * D[i]
-; AVX (YMM) version, Windows x64 calling convention
-; Strict NASM syntax
+; ============================================================
+; File: vector_triad_asm_simd_ymm.asm
+; ------------------------------------------------------------
+; RCX = n (int)                 ; length of vectors
+; RDX = A (float*)              ; destination
+; R8  = B (float*)              ; vector
+; R9  = C (float*)              ; vector
+; [RSP + 0x28] = D (float*)     ; vector (Windows x64 calling convention)
+; ------------------------------------------------------------
+; Performs A[i] = B[i] + C[i] * D[i]
+; ============================================================
 
 default rel
-
 section .text
     global vector_triad_asm_simd_ymm
 
 vector_triad_asm_simd_ymm:
-    ; Arguments (Windows x64):
-    ; RCX = n (int)
-    ; RDX = A (float*)
-    ; R8  = B (const float*)
-    ; R9  = C (const float*)
-    ; [RSP + 0x28] = D (const float*)
 
     test    rcx, rcx
     jle     .DONE

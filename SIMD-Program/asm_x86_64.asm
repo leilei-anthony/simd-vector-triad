@@ -1,3 +1,4 @@
+
 section .text
 global vector_triad_asm_x64
 

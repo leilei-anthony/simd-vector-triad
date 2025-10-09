@@ -42,10 +42,8 @@
     <CustomBuild Include="asm_simd_ymm.asm">
       <Filter>Source Files</Filter>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <MASM Include="asm_simd_xmm.asm">
+    <CustomBuild Include="asm_simd_xmm.asm">
       <Filter>Source Files</Filter>
-    </MASM>
+    </CustomBuild>
   </ItemGroup>
 </Project>

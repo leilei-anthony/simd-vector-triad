@@ -1,73 +1,68 @@
 ; ============================================================
-; File: asm_simd_xmm.asm
-; ------------------------------------------------------------
-; Argument registers
+; File: vector_triad_asm_simd_xmm.asm
 ; ------------------------------------------------------------
 ; RCX = n (int)                 ; length of vectors
 ; RDX = A (float*)              ; destination
 ; R8  = B (float*)              ; vector
 ; R9  = C (float*)              ; vector
-; [RSP + 28h] = D (float*)      ; vector
+; [RSP + 0x28] = D (float*)     ; vector (Windows x64 calling convention)
+; ------------------------------------------------------------
+; Performs A[i] = B[i] + C[i] * D[i]
 ; ============================================================
 
-PUBLIC vector_triad_asm_simd_xmm
-.code
+default rel
+section .text
+global vector_triad_asm_simd_xmm
 
-vector_triad_asm_simd_xmm PROC
+vector_triad_asm_simd_xmm:
     test    rcx, rcx
-    jle     DONE
+    jle     .done
 
-    mov     r10, qword ptr [rsp + 28h]      ; Load pointer to D
-    xor     r11, r11                        ; Set i = 0
+    mov     r10, qword [rsp + 0x28]        ; Load pointer to D
+    xor     r11, r11                 ; Set i = 0
 
-    ; rax = number of 4-float chunks
     mov     rax, rcx
-    shr     rax, 2                          ; rax = rcx / 4
-    jz      TAIL_LOOP                       ; If n < 4
+    shr     rax, 2                   ; rax = rcx / 4
+    jz      .tail_loop               ; If n < 4, skip SIMD
 
-ALIGN 16
-MAIN_LOOP:
-    vmovups xmm0, xmmword ptr [r8  + r11*4]     ; B[i..i+3]
-    vmovups xmm1, xmmword ptr [r9  + r11*4]     ; C[i..i+3]
-    vmovups xmm2, xmmword ptr [r10 + r11*4]     ; D[i..i+3]
+align 16
+.main_loop:
+    vmovups xmm0, [r8  + r11*4]      ; B[i..i+3]
+    vmovups xmm1, [r9  + r11*4]      ; C[i..i+3]
+    vmovups xmm2, [r10 + r11*4]      ; D[i..i+3]
 
-    vmulps  xmm1, xmm1, xmm2                    ; C * D
-    vaddps  xmm0, xmm0, xmm1                    ; B + (C*D)
+    vmulps  xmm1, xmm1, xmm2         ; C * D
+    vaddps  xmm0, xmm0, xmm1         ; B + (C*D)
 
-    vmovups xmmword ptr [rdx + r11*4], xmm0     ; A[i..i+3] = result
+    vmovups [rdx + r11*4], xmm0      ; A[i..i+3] = result
 
     add     r11, 4
     dec     rax
-    jnz     MAIN_LOOP
+    jnz     .main_loop
 
-TAIL_LOOP:
-    ; remainder = n % 4
+.tail_loop:
     mov     rax, rcx
     and     rax, 3
     test    rax, rax
-    jz      END_SIMD        ; If remainder == 0
+    jz      .end_simd                ; no remainder
 
-ALIGN 16
-TAIL_SCALAR:
-    ; Scalar loop for remaining vectors
-    movss   xmm0, dword ptr [r8  + r11*4]     ; B[i]
-    movss   xmm1, dword ptr [r9  + r11*4]     ; C[i]
-    movss   xmm2, dword ptr [r10 + r11*4]     ; D[i]
+align 16
+.tail_scalar:
+    movss   xmm0, dword [r8  + r11*4]      ; B[i]
+    movss   xmm1, dword [r9  + r11*4]      ; C[i]
+    movss   xmm2, dword [r10 + r11*4]      ; D[i]
 
-    mulss   xmm1, xmm2                        ; C*D
-    addss   xmm0, xmm1                        ; B + (C*D)
+    mulss   xmm1, xmm2               ; C * D
+    addss   xmm0, xmm1               ; B + (C*D)
 
-    movss   dword ptr [rdx + r11*4], xmm0     ; A[i] = result
+    movss   dword [rdx + r11*4], xmm0      ; A[i] = result
 
     inc     r11
     dec     rax
-    jnz     TAIL_SCALAR
+    jnz     .tail_scalar
 
-END_SIMD:
+.end_simd:
     vzeroupper
 
-DONE:
+.done:
     ret
-
-vector_triad_asm_simd_xmm ENDP
-END

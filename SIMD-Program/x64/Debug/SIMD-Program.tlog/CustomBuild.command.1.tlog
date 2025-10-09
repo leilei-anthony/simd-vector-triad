@@ -1,4 +1,6 @@
-^C:\USERS\NIGEL\DESKTOP\CSC612M-VECTOR-TRIAD\SIMD-VECTOR-TRIAD\SIMD-PROGRAM\ASM_SIMD_YMM.ASM
-nasm -f win64 "C:\Users\Nigel\Desktop\CSC612M-Vector-Triad\simd-vector-triad\SIMD-Program\asm_simd_ymm.asm" -o "x64\Debug\asm_simd_ymm.obj"
-^C:\USERS\NIGEL\DESKTOP\CSC612M-VECTOR-TRIAD\SIMD-VECTOR-TRIAD\SIMD-PROGRAM\ASM_X86_64.ASM
-nasm -f win64 "C:\Users\Nigel\Desktop\CSC612M-Vector-Triad\simd-vector-triad\SIMD-Program\asm_x86_64.asm" -o "x64\Debug\asm_x86_64.obj"
+^C:\USERS\AIRA\DOCUMENTS\GITHUB\SIMD-VECTOR-TRIAD\SIMD-PROGRAM\ASM_SIMD_XMM.ASM
+nasm -f win64 "C:\Users\Aira\Documents\GitHub\simd-vector-triad\SIMD-Program\asm_simd_xmm.asm" -o "x64\Debug\asm_simd_xmm.obj"
+^C:\USERS\AIRA\DOCUMENTS\GITHUB\SIMD-VECTOR-TRIAD\SIMD-PROGRAM\ASM_SIMD_YMM.ASM
+nasm -f win64 "C:\Users\Aira\Documents\GitHub\simd-vector-triad\SIMD-Program\asm_simd_ymm.asm" -o "x64\Debug\asm_simd_ymm.obj"
+^C:\USERS\AIRA\DOCUMENTS\GITHUB\SIMD-VECTOR-TRIAD\SIMD-PROGRAM\ASM_X86_64.ASM
+nasm -f win64 "C:\Users\Aira\Documents\GitHub\simd-vector-triad\SIMD-Program\asm_x86_64.asm" -o "x64\Debug\asm_x86_64.obj"
