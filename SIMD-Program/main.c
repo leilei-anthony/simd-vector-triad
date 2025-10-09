@@ -196,7 +196,7 @@ int main() {
         {"C", vector_triad_c},
         {"ASM x86-64", vector_triad_asm_x64},
         //{"ASM SIMD XMM", vector_triad_asm_simd_xmm},
-        //{"ASM SIMD YMM", vector_triad_asm_simd_ymm}
+        {"ASM SIMD YMM", vector_triad_asm_simd_ymm}
     };
     int num_kernels = sizeof(kernels) / sizeof(kernels[0]);
 

@@ -39,12 +39,12 @@
     <CustomBuild Include="asm_x86_64.asm">
       <Filter>Source Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="asm_simd_ymm.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="asm_simd_xmm.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="asm_simd_ymm.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
