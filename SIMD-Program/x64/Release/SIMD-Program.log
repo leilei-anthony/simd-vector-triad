@@ -1,0 +1,10 @@
+﻿  Assembling asm_simd_xmm.asm
+  Assembling asm_simd_ymm.asm
+  Assembling asm_x86_64.asm
+  main.c
+  vector_kernels.c
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 13 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SIMD-Program.vcxproj -> C:\Users\Nigel\Desktop\CSC612M-Vector-Triad\simd-vector-triad\x64\Release\SIMD-Program.exe

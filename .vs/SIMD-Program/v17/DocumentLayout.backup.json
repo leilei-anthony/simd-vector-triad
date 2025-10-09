@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\",
+  "WorkspaceRootPath": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\asm_x86_64.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_simd_ymm.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_simd_ymm.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\asm_simd_ymm.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_simd_xmm.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\asm_simd_xmm.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\asm_x86_64.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_simd_xmm.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5F4D0D16-75B7-49BC-BF17-9299FBFBE027}|SIMD-Program\\SIMD-Program.vcxproj|solutionrelative:SIMD-Program\\asm_simd_xmm.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,63 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "asm_x86_64.asm",
-              "DocumentMoniker": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm",
-              "RelativeDocumentMoniker": "SIMD-Program\\asm_x86_64.asm",
-              "ToolTip": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm",
-              "RelativeToolTip": "SIMD-Program\\asm_x86_64.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-09T16:30:27.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "asm_simd_ymm.asm",
-              "DocumentMoniker": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_simd_ymm.asm",
-              "RelativeDocumentMoniker": "SIMD-Program\\asm_simd_ymm.asm",
-              "ToolTip": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_simd_ymm.asm",
-              "RelativeToolTip": "SIMD-Program\\asm_simd_ymm.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAALAAAAAAAAAA==",
+              "Title": "asm_x86_64.asm",
+              "DocumentMoniker": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm",
+              "RelativeDocumentMoniker": "SIMD-Program\\asm_x86_64.asm",
+              "ToolTip": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_x86_64.asm",
+              "RelativeToolTip": "SIMD-Program\\asm_x86_64.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-09T16:29:00.776Z",
+              "WhenOpened": "2025-10-09T16:50:44.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "asm_simd_xmm.asm",
-              "DocumentMoniker": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_simd_xmm.asm",
-              "RelativeDocumentMoniker": "SIMD-Program\\asm_simd_xmm.asm",
-              "ToolTip": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\asm_simd_xmm.asm",
-              "RelativeToolTip": "SIMD-Program\\asm_simd_xmm.asm",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\main.c",
+              "RelativeDocumentMoniker": "SIMD-Program\\main.c",
+              "ToolTip": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\main.c",
+              "RelativeToolTip": "SIMD-Program\\main.c",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-10-09T16:50:11.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "asm_simd_ymm.asm",
+              "DocumentMoniker": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_simd_ymm.asm",
+              "RelativeDocumentMoniker": "SIMD-Program\\asm_simd_ymm.asm",
+              "ToolTip": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_simd_ymm.asm",
+              "RelativeToolTip": "SIMD-Program\\asm_simd_ymm.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-09T16:28:08.92Z",
+              "WhenOpened": "2025-10-09T16:50:01.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "main.c",
-              "DocumentMoniker": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\main.c",
-              "RelativeDocumentMoniker": "SIMD-Program\\main.c",
-              "ToolTip": "C:\\Users\\Aira\\Documents\\GitHub\\simd-vector-triad\\SIMD-Program\\main.c",
-              "RelativeToolTip": "SIMD-Program\\main.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-10-09T16:28:08.013Z",
+              "Title": "asm_simd_xmm.asm",
+              "DocumentMoniker": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_simd_xmm.asm",
+              "RelativeDocumentMoniker": "SIMD-Program\\asm_simd_xmm.asm",
+              "ToolTip": "C:\\Users\\Nigel\\Desktop\\CSC612M-Vector-Triad\\simd-vector-triad\\SIMD-Program\\asm_simd_xmm.asm",
+              "RelativeToolTip": "SIMD-Program\\asm_simd_xmm.asm",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-09T16:49:58.306Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
