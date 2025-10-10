@@ -139,8 +139,6 @@ Each kernel is verified for correctness and benchmarked to determine whether the
 |             | ASM SIMD XMM | 3.082        | 2.393        | 4.840        | 2.72       | 21.77    |
 |             | ASM SIMD YMM | 3.454        | 2.123        | 8.042        | 2.43       | 19.43    |
 
-
-
 ### Metrics
 
 - Average Time Relative to C (×) - This shows how much faster each kernel runs compared to the baseline C code.
@@ -151,31 +149,39 @@ Each performance metric rate compares the assembly implementations (x86-64, SIMD
 
 ## Performance Analysis - Release
 
-| **Kernel**       |  **Avg (ms) Relative to C (×)**  | **GFLOPS Relative to C (x)** | **GB/s Relative to C (x)** |
-| ---------------- | ---------------------------------|------------------------------|----------------------------|
-| **C**            | 1.00x baseline                   |  1.00x baseline              |  1.00x baseline            |        
-| **ASM x86-64**   | 1.13x slower                     |  0.39x lower                 |  0.39x lower               |
-| **ASM SIMD XMM** | 1.06x slower                     |  0.91x lower                 |  0.91x lower               |
-| **ASM SIMD YMM** | 1.04x slower                     |  1.00x lower                 |  1.00x lower               |
+| **Kernel**       | **Avg (ms) Relative to C (×)** | **GFLOPS Relative to C (x)** | **GB/s Relative to C (x)** |
+| ---------------- | ------------------------------ | ---------------------------- | -------------------------- |
+| **C**            | 1.00x baseline                 | 1.00x baseline               | 1.00x baseline             |
+| **ASM x86-64**   | 1.13x slower                   | 0.39x lower                  | 0.39x lower                |
+| **ASM SIMD XMM** | 1.06x slower                   | 0.91x lower                  | 0.91x lower                |
+| **ASM SIMD YMM** | 1.04x slower                   | 1.00x lower                  | 1.00x lower                |
 
 ## Performance Analysis - Debug
 
-| **Kernel**       |  **Avg (ms) Relative to C (×)**  | **GFLOPS Relative to C (x)** | **GB/s Relative to C (x)** |
-| ---------------- | ---------------------------------|------------------------------|----------------------------|
-| **C**            | 1.00x baseline                   |  1.00x baseline              |  1.00x baseline            |        
-| **ASM x86-64**   | 1.92x faster                     |  2.98x higher                |  2.97x higher              |
-| **ASM SIMD XMM** | 2.41x faster                     |  7.35x higher                |  7.35x higher              |
-| **ASM SIMD YMM** | 2.10x faster                     |  8.65x higher                |  8.64x higher              |
+| **Kernel**       | **Avg (ms) Relative to C (×)** | **GFLOPS Relative to C (x)** | **GB/s Relative to C (x)** |
+| ---------------- | ------------------------------ | ---------------------------- | -------------------------- |
+| **C**            | 1.00x baseline                 | 1.00x baseline               | 1.00x baseline             |
+| **ASM x86-64**   | 1.92x faster                   | 2.98x higher                 | 2.97x higher               |
+| **ASM SIMD XMM** | 2.41x faster                   | 7.35x higher                 | 7.35x higher               |
+| **ASM SIMD YMM** | 2.10x faster                   | 8.65x higher                 | 8.64x higher               |
 
 ---
 
 ### Discussion of Performance
 
-* **C Implementation** – In Release mode, the compiler applies heavy optimizations and automatic SIMD vectorization, making the C version the fastest. In Debug mode, these optimizations are disabled, causing significant slowdowns due to unoptimized, scalar execution and added debugging overhead.
-* **ASM (Non-SIMD)** – The non-SIMD assembly performs better than unoptimized C in Debug but slower than optimized C in Release. Without SIMD, it becomes limited by instruction throughput and memory access speed.
-* **XMM (SSE)** – The XMM version achieves notable gains in Debug, processing four floats per instruction. However, its advantage fades in Release since the compiler likely emits similar SSE code for C.
-* **YMM (AVX)** – The YMM version performs best in Debug, doubling throughput over XMM. In Release, its performance nearly matches optimized C, which may already use AVX.
-* **Memory vs Compute Bound** – At small sizes, performance is compute-bound, benefiting from SIMD. At larger sizes, all kernels become memory-bound, reducing the performance gap between implementations.
+- **C Implementation** – In Release mode, the compiler applies heavy optimizations and automatic SIMD vectorization, making the C version the fastest. In Debug mode, these optimizations are disabled, causing significant slowdowns due to unoptimized, scalar execution and added debugging overhead.
+- **ASM (Non-SIMD)** – The non-SIMD assembly performs better than unoptimized C in Debug but slower than optimized C in Release. Without SIMD, it becomes limited by instruction throughput and memory access speed.
+- **XMM (SSE)** – The XMM version achieves notable gains in Debug, processing four floats per instruction. However, its advantage fades in Release since the compiler likely emits similar SSE code for C.
+- **YMM (AVX)** – The YMM version performs best in Debug, doubling throughput over XMM. In Release, its performance nearly matches optimized C, which may already use AVX.
+- **Memory vs Compute Bound** – At small sizes, performance is compute-bound, benefiting from SIMD. At larger sizes, all kernels become memory-bound, reducing the performance gap between implementations.
+
+### Analysis of Performance
+
+The comparative results show how compiler optimization and vector width influence execution time. In Debug mode, the unoptimized C implementation performs the slowest, while all assembly kernels execute significantly faster due to direct instruction control and reduced overhead. The XMM and YMM kernels were identical except for register width, yet XMM achieves slightly shorter execution times. This counterintuitive result suggests that the additional width of YMM registers does not yield proportional speedups because the operation is largely memory-bound, not compute-bound. Wider YMM loads increase memory traffic, and minor alignment or scheduling penalties can offset their theoretical advantage.
+
+In Release mode, full compiler optimizations narrow performance gaps. The optimized C kernel executes the fastest overall, with the assembly versions only 1.04 to 1.13x slower on average. This indicates that the compiler’s auto-vectorization already generates efficient code. As the input size increases, execution times scale predictably: small arrays fit within cache and benefit from high instruction throughput, while larger arrays exceed cache capacity, causing all kernels to slow down similarly due to memory bandwidth limits.
+
+Overall, execution time trends confirm that SIMD width alone does not guarantee faster performance. XMM remains slightly faster because it balances throughput and memory access without the added latency and power overhead of 256-bit YMM operations.
 
 ---
 
@@ -183,31 +189,30 @@ Each performance metric rate compares the assembly implementations (x86-64, SIMD
 
 ### Problems Encountered and Solutions
 
-* **Build Configuration Issues** - Encountered difficulties building and linking the C and assembly files in Visual Studio 2022 due to mismatched project settings.
-> **Solution** - Adjusted the project configuration to ensure correct calling conventions and linking between `.c` and `.asm` files.
-* **Memory Alignment Isseus** - The program crashed with exit code 0x80000003, indicating a breakpoint or memory alignment issue.
-> **Solution** - Fixed alignment problems by ensuring proper use of `_aligned_malloc` and verifying that SIMD operations accessed valid, aligned memory addresses.
-* **Boundary Handling** - Initially attempted to use masking to handle remainder elements that didn’t fit evenly into SIMD vector widths.
-> **Solution** - Since masking added unnecessary complexity and gave no performance gain for small remainders, we instead processed the remaining elements using a scalar vector triad for simpler and more stable results.
-* **Performance Discrepancy Between Debug and Release Versions** – Noticed that the C implementation outperformed the assembly versions in the Release build, but not in Debug mode.
-> **Solution** – Investigated compiler optimizations and confirmed that the compiler’s aggressive auto-vectorization and inlining in Release mode were the main cause. This highlighted how compiler optimizations can outperform manual assembly under certain conditions.
+- **Build Configuration Issues** - Encountered difficulties building and linking the C and assembly files in Visual Studio 2022 due to mismatched project settings.
+  > **Solution** - Adjusted the project configuration to ensure correct calling conventions and linking between `.c` and `.asm` files.
+- **Memory Alignment Isseus** - The program crashed with exit code 0x80000003, indicating a breakpoint or memory alignment issue.
+  > **Solution** - Fixed alignment problems by ensuring proper use of `_aligned_malloc` and verifying that SIMD operations accessed valid, aligned memory addresses.
+- **Boundary Handling** - Initially attempted to use masking to handle remainder elements that didn’t fit evenly into SIMD vector widths.
+  > **Solution** - Since masking added unnecessary complexity and gave no performance gain for small remainders, we instead processed the remaining elements using a scalar vector triad for simpler and more stable results.
+- **Performance Discrepancy Between Debug and Release Versions** – Noticed that the C implementation outperformed the assembly versions in the Release build, but not in Debug mode.
+  > **Solution** – Investigated compiler optimizations and confirmed that the compiler’s aggressive auto-vectorization and inlining in Release mode were the main cause. This highlighted how compiler optimizations can outperform manual assembly under certain conditions.
 
 ---
 
 ### Insights / AHA Moments
 
-* Using SIMD registers directly in assembly clarified instruction-level parallelism.
-* Averaging multiple runs smoothed out timing noise for accurate measurements.
-* Explicitly comparing all four versions highlighted the performance impact of SIMD instructions.
-* Observing performance differences between Release and Debug builds revealed how compiler optimizations and vectorization significantly affect execution speed.
+- Using SIMD registers directly in assembly clarified instruction-level parallelism.
+- Averaging multiple runs smoothed out timing noise for accurate measurements.
+- Explicitly comparing all four versions highlighted the performance impact of SIMD instructions.
+- Observing performance differences between Release and Debug builds revealed how compiler optimizations and vectorization significantly affect execution speed.
 
 ---
 
 ## Conclusion
 
-* Compiler optimizations in the Release build allow the C version to perform nearly as efficiently as the assembly implementations.
-* In the Debug build, assembly, especially SIMD versions shows significantly higher performance due to the lack of compiler optimizations.
-* Manual low-level optimization can outperform unoptimized C code but offers diminishing returns when compiler optimizations are enabled.
+- Compiler optimizations in the Release build allow the C version to perform nearly as efficiently as the assembly implementations.
+- In the Debug build, assembly, especially SIMD versions shows significantly higher performance due to the lack of compiler optimizations.
+- Manual low-level optimization can outperform unoptimized C code but offers diminishing returns when compiler optimizations are enabled.
 
 ---
-
