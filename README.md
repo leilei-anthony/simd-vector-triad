@@ -71,7 +71,7 @@ Each kernel is verified for correctness and benchmarked to determine whether the
 
 ---
 
-## Comparative Table of Execution Times
+## Comparative Table of Execution Times - Release
 
 | **Size**    | **Kernel**   | **Avg (ms)** | **Min (ms)** | **Max (ms)** | **GFLOPS** | **GB/s** |
 | ----------- | ------------ | ------------ | ------------ | ------------ | ---------- | -------- |
@@ -106,29 +106,68 @@ Each kernel is verified for correctness and benchmarked to determine whether the
 
 ---
 
-## Performance Analysis (Using Geometric Mean)
+## Comparative Table of Execution Times - Debug
 
-### Geometric Mean of Execution Times (ms)
+| **Size**    | **Kernel**   | **Avg (ms)** | **Min (ms)** | **Max (ms)** | **GFLOPS** | **GB/s** |
+| ----------- | ------------ | ------------ | ------------ | ------------ | ---------- | -------- |
+| **1024**    | C            | 0.001        | 0.001        | 0.002        | 1.53       | 12.23    |
+|             | ASM x86-64   | 0.000        | 0.000        | 0.000        | 5.12       | 40.96    |
+|             | ASM SIMD XMM | 0.000        | 0.000        | 0.000        | 17.07      | 136.53   |
+|             | ASM SIMD YMM | 0.000        | 0.000        | 0.000        | 21.19      | 169.49   |
+| **4096**    | C            | 0.006        | 0.005        | 0.013        | 1.43       | 11.46    |
+|             | ASM x86-64   | 0.002        | 0.001        | 0.009        | 4.64       | 37.10    |
+|             | ASM SIMD XMM | 0.001        | 0.000        | 0.001        | 15.55      | 124.44   |
+|             | ASM SIMD YMM | 0.000        | 0.000        | 0.000        | 21.94      | 175.54   |
+| **16384**   | C            | 0.021        | 0.020        | 0.025        | 1.53       | 12.28    |
+|             | ASM x86-64   | 0.007        | 0.007        | 0.008        | 4.70       | 37.63    |
+|             | ASM SIMD XMM | 0.003        | 0.003        | 0.004        | 10.28      | 82.26    |
+|             | ASM SIMD YMM | 0.003        | 0.003        | 0.004        | 11.73      | 93.85    |
+| **65536**   | C            | 0.111        | 0.076        | 0.194        | 1.18       | 9.47     |
+|             | ASM x86-64   | 0.030        | 0.024        | 0.151        | 4.30       | 34.43    |
+|             | ASM SIMD XMM | 0.009        | 0.009        | 0.011        | 13.92      | 111.39   |
+|             | ASM SIMD YMM | 0.008        | 0.007        | 0.016        | 17.25      | 138.03   |
+| **262144**  | C            | 0.365        | 0.298        | 0.624        | 1.44       | 11.49    |
+|             | ASM x86-64   | 0.139        | 0.115        | 0.296        | 3.77       | 30.14    |
+|             | ASM SIMD XMM | 0.081        | 0.073        | 0.255        | 6.45       | 51.59    |
+|             | ASM SIMD YMM | 0.104        | 0.075        | 0.318        | 5.03       | 40.27    |
+| **1048576** | C            | 1.742        | 1.234        | 3.134        | 1.20       | 9.63     |
+|             | ASM x86-64   | 0.544        | 0.449        | 0.838        | 3.85       | 30.83    |
+|             | ASM SIMD XMM | 0.460        | 0.372        | 0.772        | 4.56       | 36.49    |
+|             | ASM SIMD YMM | 0.612        | 0.356        | 1.262        | 3.43       | 27.42    |
+| **4194304** | C            | 6.523        | 5.014        | 9.896        | 1.29       | 10.29    |
+|             | ASM x86-64   | 3.836        | 2.780        | 4.936        | 2.19       | 17.50    |
+|             | ASM SIMD XMM | 3.082        | 2.393        | 4.840        | 2.72       | 21.77    |
+|             | ASM SIMD YMM | 3.454        | 2.123        | 8.042        | 2.43       | 19.43    |
 
-| **Kernel**       | **Geometric Mean (ms)** | **Relative to C (×)** |
-| ---------------- | ----------------------- | --------------------- |
-| **C**            | 0.049                   | 1.00×                 |
-| **ASM x86-64**   | 0.061                   | 1.24×                 |
-| **ASM SIMD XMM** | 0.040                   | 1.23×                 |
-| **ASM SIMD YMM** | 0.037                   | 1.32×                 |
 
-*(Geometric mean computed across all problem sizes for each kernel.)*
 
----
+### Metrics
 
-### SIMD Speedup Summary
+- Average Time Relative to C (×) - This shows how much faster each kernel runs compared to the baseline C code.
+- GFLOPS Relative to C (×) - This measures how much higher the floating-point computation rate (billion FLOPs per second) is compared to C.
+- GB/s Relative to C (×) - This measures how much more memory bandwidth (gigabytes per second) each kernel achieves relative to the C baseline.
 
-| **Version**   | **Geometric Mean Speedup vs C** |
-| ------------- | ------------------------------- |
-| **XMM (SSE)** | **1.23× faster**                |
-| **YMM (AVX)** | **1.32× faster**                |
 
-The geometric mean provides a balanced measure of speedup across all input sizes, reducing the influence of extreme values at small or large sizes.
+Each performance metric rate compares the assembly implementations (x86-64, SIMD XMM, and SIMD YMM) against the baseline C implementation to show how much faster or more efficient each kernel performs.
+
+## Performance Analysis - Release
+
+| **Kernel**       |  **Avg (ms) Relative to C (×)**  | **GFLOPS Relative to C (x)** | **GB/s Relative to C (x)** |
+| ---------------- | ---------------------------------|------------------------------|----------------------------|
+| **C**            | 1.00x                            |  1.00x                       |  1.00x                     |        
+| **ASM x86-64**   | 1.24x                            |  0.47x                       |  0.42x                     |
+| **ASM SIMD XMM** | 1.23x                            |  0.96x                       |  0.96x                     |
+| **ASM SIMD YMM** | 1.32x                            |  1.12x                       |  1.10x                     |
+
+## Performance Analysis - Debug
+
+| **Kernel**       |  **Avg (ms) Relative to C (×)**  | **GFLOPS Relative to C (x)** | **GB/s Relative to C (x)** |
+| ---------------- | ---------------------------------|------------------------------|----------------------------|
+| **C**            | 1.00x baseline                   |  1.00x baseline              |  1.00x baseline            |        
+| **ASM x86-64**   | 1.92x faster                     |  2.98x higher                |  2.97x higher              |
+| **ASM SIMD XMM** | 2.41x faster                     |  7.35x higher                |  7.35x higher              |
+| **ASM SIMD YMM** | 2.10x faster                     |  8.65x higher                |  8.64x higher              |
+
 
 ---
 
