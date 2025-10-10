@@ -1,14 +1,18 @@
+; ============================================================
+; File: vector_triad_asm_simd_xmm.asm
+; ------------------------------------------------------------
+; RCX = n (int)                 ; length of vectors
+; RDX = A (float*)              ; destination
+; R8  = B (float*)              ; vector
+; R9  = C (float*)              ; vector
+; [RSP + 0x28] = D (float*)     ; vector (Windows x64 calling convention)
+; ------------------------------------------------------------
+; Performs A[i] = B[i] + C[i] * D[i]
+; ============================================================
+
 
 section .text
 global vector_triad_asm_x64
-
-; vector_triad_asm_x64(n, A, B, C, D)
-; Windows x64 calling convention:
-; rcx = n
-; rdx = A
-; r8  = B
-; r9  = C
-; [rsp+0x28] = D
 
 vector_triad_asm_x64:
     test    rcx, rcx
