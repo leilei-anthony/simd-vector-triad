@@ -202,6 +202,8 @@ Overall, execution time trends confirm that SIMD width alone does not guarantee 
 
 ### Insights / AHA Moments
 
+- “Wider” isn’t always faster: Even though both XMM and YMM use AVX2, XMM runs faster because it avoids AVX downclocking, reduces memory traffic, and sustains higher instruction throughput.
+- SIMD speedups taper beyond cache size: After ~262K elements, data exceeds the cache, making the workload memory-bound where DRAM bandwidth limits performance.
 - Using SIMD registers directly in assembly clarified instruction-level parallelism.
 - Averaging multiple runs smoothed out timing noise for accurate measurements.
 - Explicitly comparing all four versions highlighted the performance impact of SIMD instructions.
